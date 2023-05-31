@@ -8,6 +8,8 @@ const categoryRouter = require('./routes/productcategoryRoute')
 const blogCatRouter = require('./routes/blogCatRoute');
 const brandRouter = require('./routes/brandRoute');
 const couponRouter = require('./routes/couponRoute');
+const colorRouter = require('./routes/colorRoute');
+const enqRouter = require('./routes/authRoute');
 const bodyParser = require('body-parser')
 const { errorHandler, notFound } = require('./middlewares/errorHandler')
 const dotenv = require('dotenv').config()
@@ -25,8 +27,10 @@ app.use('/api/product', productRouter);
 app.use('/api/blog', blogRouter);
 app.use('/api/category', categoryRouter);
 app.use('/api/blogcategory', blogCatRouter );
-app.use('/api/brand', brandRouter)
+app.use('/api/brand', brandRouter);
+app.use('/api/color', colorRouter);
 app.use('/api/coupon', couponRouter );
+app.use('/api/enquiry', enqRouter);
 
 //middleware after the routes
 app.use(notFound);
